@@ -1,8 +1,8 @@
-import Login from "./components/Login/Login"
+import SignUp from "./components/SignUp/SignUp"
 
 function App() {
   return (
-    <Login />
+    <SignUp />
   )
 }
 

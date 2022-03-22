@@ -1,13 +1,13 @@
-import loginApi from "../services/loginApi"
+import signUpApi from "../services/signUpApi"
 
-const postLoginData = async ({ email, password }) => {
+const postSignUpData = async ({ email, password }) => {
   const payload = {
     email: null,
     password: null
   }
 
   try {
-    const loginDataResult = await loginApi({ email, password })
+    const loginDataResult = await signUpApi({ email, password })
     payload.email = loginDataResult.data.email
     payload.password = loginDataResult.data.password
     
@@ -17,4 +17,4 @@ const postLoginData = async ({ email, password }) => {
   }
 }
 
-export default postLoginData
+export default postSignUpData
