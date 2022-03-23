@@ -4,6 +4,11 @@
       "email": "ariel",
       "password": "batatas",
       "id": 1
+    },
+    {
+      "email": "ariel",
+      "password": "ba",
+      "id": 2
     }
   ]
 }

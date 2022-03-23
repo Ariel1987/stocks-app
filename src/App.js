@@ -1,8 +1,13 @@
-import SignUp from "./components/SignUp/SignUp"
+import { Wrapper } from './App.styles'
+import SignUp from './components/SignUp/SignUp'
+import Login from './components/Login/Login'
 
 function App() {
   return (
-    <SignUp />
+    <Wrapper>
+      <Login />
+      {/* <SignUp /> */}
+    </Wrapper>
   )
 }
 
