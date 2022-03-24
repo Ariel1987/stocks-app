@@ -10,7 +10,8 @@ const LoginContext = React.createContext()
 
 const initState = {
   error: false,
-  data: null,
+  user: null,
+  errorData: null
 }
 
 function loginReducer(state = initState, action) {
@@ -21,14 +22,14 @@ function loginReducer(state = initState, action) {
     case FETCHING_DATA_SUCCESS: {
       return {
         ...state,
-        data: action.payload,
+        user: action.payload,
         error: false,
       }
     }
     case FETCHING_DATA_ERROR: {
       return {
         ...state,
-        data: null,
+        user: null,
         error: true,
         errorData: action.payload,
       }
@@ -36,14 +37,14 @@ function loginReducer(state = initState, action) {
     case POSTING_DATA_SUCCESS: {
       return {
         ...state,
-        data: action.payload,
+        user: action.payload,
         error: false,
       }
     }
     case POSTING_DATA_ERROR: {
       return {
         ...state,
-        data: null,
+        user: null,
         error: true,
         errorData: action.payload,
       }

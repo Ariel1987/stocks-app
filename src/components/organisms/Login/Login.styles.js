@@ -13,13 +13,8 @@ export const Wrapper = styled.form`
       text-align: center;
     }
 
-    input {
-      width: 100%;
-      margin-bottom: 20px;
-      padding: 16px;
-      background-color: #1c1f24;
-      border: none;
-      border-bottom: solid 2px;
+    a {
+      color: #2666CF;
     }
 
     p {

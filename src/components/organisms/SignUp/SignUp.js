@@ -87,7 +87,7 @@ const SignUp = () => {
       <LoginButton buttonName="SIGN UP" />
       <p>
         Already have an account?{' '}
-        <Link to="/" style={{ color: '#2666CF' }}>
+        <Link to="/login">
           Login
         </Link>
       </p>

@@ -1,30 +1,36 @@
-import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 import { Wrapper } from './Login.styles'
-import fetchLoginData from '../../../utils/fetchLoginData'
+import login from '../../../services/login'
 import FormInput from '../../../components/atoms/Input/Input'
 import LoginButton from '../../../components/atoms/Button/Button'
+import {
+  FETCHING_DATA_ERROR,
+  FETCHING_DATA_SUCCESS,
+  useLoginData,
+} from '../../../context/useLoginData'
 
 const Login = () => {
-  const [login, setLogin] = useState({ email: '', password: '' })
-  const [users, setUsers] = useState()
+  const [loginData, setLogin] = useState({ email: '', password: '' })
+  const { dispatch } = useLoginData()
+  const navigate = useNavigate()
 
-  useEffect(() => {
-    const fetchUsers = async () => {
-      setUsers(await fetchLoginData())
-    }
-    fetchUsers()
-  }, [])
+  const handleLoginSubmission = async (event) => {
+    event.preventDefault()
 
-  const handleLoginSubmission = (event) => {
-    event.prevenDefault()
-    
-    if (users?.data.filter(data => data.email === login.email)) {
-      console.log('welcome')
+    try {
+      const response = await login(loginData)
+      dispatch({ type: FETCHING_DATA_SUCCESS, payload: response })
+
+      if (response.status === 200 && response.data.length > 0) {
+        console.log('welcome')
+        console.log(response)
+        navigate('/')
+      }
+    } catch (error) {
+      dispatch({ type: FETCHING_DATA_ERROR })
     }
   }
-
-  console.log(users?.data.filter(data => data.email === login.email))
 
   return (
     <Wrapper onSubmit={handleLoginSubmission}>
@@ -35,7 +41,7 @@ const Login = () => {
         onChange={(event) =>
           setLogin((state) => ({ ...state, email: event.target.value }))
         }
-        value={login.email || ''}
+        value={loginData.email || ''}
       />
       <FormInput
         placeholder="Enter your password"
@@ -43,14 +49,11 @@ const Login = () => {
         onChange={(event) =>
           setLogin((state) => ({ ...state, password: event.target.value }))
         }
-        value={login.password || ''}
+        value={loginData.password || ''}
       />
       <LoginButton buttonName="LOGIN" />
       <p>
-        Don't have an account?{' '}
-        <Link to="signup" style={{ color: '#2666CF' }}>
-          Sign Up
-        </Link>
+        Don't have an account? <Link to="/signup">Sign Up</Link>
       </p>
     </Wrapper>
   )

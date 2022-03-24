@@ -1,33 +1,28 @@
 {
   "users": [
     {
-      "email": "ariel",
-      "password": "batatas",
+      "name": "Ariel",
+      "email": "ariel@",
+      "password": "1234",
       "id": 1
     },
     {
-      "name": "ARIEL PIRES DE ALMEIDA",
-      "email": "arielpiresdealmeida@gmail.com",
-      "password": "batatas",
+      "name": "Keren",
+      "email": "keren@",
+      "password": "1234",
+      "id": 2
+    },
+    {
+      "name": "David",
+      "email": "david@",
+      "password": "1234",
       "id": 3
     },
     {
-      "name": "keren",
-      "email": "kerenpa",
-      "password": "sasas",
+      "name": "Flavia",
+      "email": "flavia@",
+      "password": "1234",
       "id": 4
-    },
-    {
-      "name": "ARIEL PIRES DE ALMEIDA",
-      "email": "arielpiresdealmeida@gmail.com",
-      "password": "batatas",
-      "id": 5
-    },
-    {
-      "name": "ARIEL PIRES DE ALMEIDA",
-      "email": "ariel@",
-      "password": "asaa",
-      "id": 6
     }
   ]
 }
