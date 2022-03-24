@@ -1,12 +1,13 @@
 import { Wrapper } from './App.styles'
-import SignUp from './components/SignUp/SignUp'
-import Login from './components/Login/Login'
+import { BrowserRouter as Router } from 'react-router-dom'
+import Routes from './routes'
 
 function App() {
   return (
     <Wrapper>
-      <Login />
-      {/* <SignUp /> */}
+      <Router>
+        <Routes />
+      </Router>
     </Wrapper>
   )
 }

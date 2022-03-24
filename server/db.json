@@ -9,6 +9,24 @@
       "email": "ariel",
       "password": "ba",
       "id": 2
+    },
+    {
+      "name": "ARIEL PIRES DE ALMEIDA",
+      "email": "arielpiresdealmeida@gmail.com",
+      "password": "batatas",
+      "id": 3
+    },
+    {
+      "name": "keren",
+      "email": "kerenpa",
+      "password": "sasas",
+      "id": 4
+    },
+    {
+      "name": "ARIEL PIRES DE ALMEIDA",
+      "email": "arielpiresdealmeida@gmail.com",
+      "password": "batatas",
+      "id": 5
     }
   ]
 }

@@ -13,14 +13,14 @@ export const Wrapper = styled.form`
       text-align: center;
     }
 
-    input {
+    ${'' /* input {
       width: 100%;
       margin-bottom: 20px;
       padding: 12px;
       background-color: #1c1f24;
       border: none;
       border-bottom: solid 2px;
-    }
+    } */}
 
     p {
       color: #e9e9e9;
@@ -29,14 +29,14 @@ export const Wrapper = styled.form`
     }
 
     button {
-      width: 100%;
+      ${'' /* width: 100%;
       padding: 20px;
       border-radius: 4px;
       background-color: ${theme.colors.main};
       border: none;
       color: white;
       font-weight: ${theme.font.weight.bold};
-      margin-top: 45px;
+      margin-top: 45px; */}
     }
   `}
 `
