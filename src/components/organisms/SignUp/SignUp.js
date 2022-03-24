@@ -1,33 +1,48 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import LoginButton from '../../components/atoms/Button/Button'
-import FormInput from '../../components/atoms/Input/Input'
+import LoginButton from '../../atoms/Button/Button'
+import FormInput from '../../atoms/Input/Input'
 import {
   POSTING_DATA_ERROR,
   POSTING_DATA_SUCCESS,
   useLoginData,
-} from '../../context/useLoginData'
-import postSignUpData from '../../utils/postSignUpData'
+} from '../../../context/useLoginData'
+import postSignUpData from '../../../utils/postSignUpData'
 import { Wrapper } from './SignUp.styles'
 
 const SignUp = () => {
-  const [signUp, setSignUp] = useState({ name: '', email: '', password: '' })
+  const [signUp, setSignUp] = useState({
+    name: '',
+    email: '',
+    password: '',
+    passwordVerification: '',
+  })
   const { dispatch: dispatchLoginData, state: signUpData } = useLoginData()
 
   const handleSignUpSubmission = async (event) => {
     event.preventDefault()
 
-    try {
-      const response = await postSignUpData({
-        name: signUp.name,
-        email: signUp.email,
-        password: signUp.password,
-      })
+    if (
+      signUp.email.includes('@') &&
+      signUp.password === signUp.passwordVerification
+    ) {
+      try {
+        const response = await postSignUpData({
+          name: signUp.name,
+          email: signUp.email,
+          password: signUp.password,
+        })
 
-      dispatchLoginData({ type: POSTING_DATA_SUCCESS, payload: response })
-    } catch (error) {
-      dispatchLoginData({ type: POSTING_DATA_ERROR })
+        dispatchLoginData({ type: POSTING_DATA_SUCCESS, payload: response })
+      } catch (error) {
+        dispatchLoginData({ type: POSTING_DATA_ERROR })
+      }
+    } else if (!signUp.email.includes('@')) {
+      alert('Invalid email')
+    } else {
+      alert('Reeenter same passowrd')
     }
+
     setSignUp({ name: '', email: '', password: '' })
   }
 
@@ -62,9 +77,12 @@ const SignUp = () => {
         placeholder="Verify your password"
         id="password"
         onChange={(event) =>
-          setSignUp((state) => ({ ...state, password: event.target.value }))
+          setSignUp((state) => ({
+            ...state,
+            passwordVerification: event.target.value,
+          }))
         }
-        value={signUp.password || ''}
+        value={signUp.passwordVerification || ''}
       />
       <LoginButton buttonName="SIGN UP" />
       <p>

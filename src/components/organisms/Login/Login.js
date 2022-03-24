@@ -5,10 +5,10 @@ import {
   POSTING_DATA_ERROR,
   POSTING_DATA_SUCCESS,
   useLoginData,
-} from '../../context/useLoginData'
-import fetchLoginData from '../../utils/fetchLoginData'
-import FormInput from '../../components/atoms/Input/Input'
-import LoginButton from '../../components/atoms/Button/Button'
+} from '../../../context/useLoginData'
+import fetchLoginData from '../../../utils/fetchLoginData'
+import FormInput from '../../../components/atoms/Input/Input'
+import LoginButton from '../../../components/atoms/Button/Button'
 
 const Login = () => {
   const [login, setLogin] = useState({ email: '', password: '' })
@@ -17,12 +17,16 @@ const Login = () => {
   const handleLoginSubmission = async (event) => {
     event.preventDefault()
 
-    try {
-      const response = await fetchLoginData()
+    if (login.email.includes('@')) {
+      try {
+        const response = await fetchLoginData()
 
-      dispatchLoginData({ type: POSTING_DATA_SUCCESS, payload: response })
-    } catch (error) {
-      dispatchLoginData({ type: POSTING_DATA_ERROR })
+        dispatchLoginData({ type: POSTING_DATA_SUCCESS, payload: response })
+      } catch (error) {
+        dispatchLoginData({ type: POSTING_DATA_ERROR })
+      }
+    } else {
+      alert ('Invalid email')
     }
     setLogin({ email: '', password: '' })
   }
@@ -47,7 +51,7 @@ const Login = () => {
         }
         value={login.password || ''}
       />
-      <LoginButton buttonName='LOGIN' />
+      <LoginButton buttonName="LOGIN" />
       <p>
         Don't have an account?{' '}
         <Link to="signup" style={{ color: '#2666CF' }}>
