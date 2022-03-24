@@ -1,15 +1,13 @@
 import loginApi from "../services/loginApi"
 
-const fetchLoginData = async ({ email, password }) => {
+const fetchLoginData = async () => {
   const payload = {
-    email: null,
-    password: null
+    data: null
   }
 
   try {
-    const loginDataResult = await loginApi({ email, password })
-    payload.email = loginDataResult.data.email
-    payload.password = loginDataResult.data.password
+    const loginDataResult = await loginApi()
+    payload.data = loginDataResult.data
     
     return payload
   } catch (error) {

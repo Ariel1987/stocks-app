@@ -1,36 +1,30 @@
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Wrapper } from './Login.styles'
-import {
-  POSTING_DATA_ERROR,
-  POSTING_DATA_SUCCESS,
-  useLoginData,
-} from '../../../context/useLoginData'
 import fetchLoginData from '../../../utils/fetchLoginData'
 import FormInput from '../../../components/atoms/Input/Input'
 import LoginButton from '../../../components/atoms/Button/Button'
 
 const Login = () => {
   const [login, setLogin] = useState({ email: '', password: '' })
-  const { dispatch: dispatchLoginData, state: loginData } = useLoginData()
+  const [users, setUsers] = useState()
 
-  const handleLoginSubmission = async (event) => {
-    event.preventDefault()
-
-    if (login.email.includes('@')) {
-      try {
-        const response = await fetchLoginData()
-
-        dispatchLoginData({ type: POSTING_DATA_SUCCESS, payload: response })
-      } catch (error) {
-        dispatchLoginData({ type: POSTING_DATA_ERROR })
-      }
-    } else {
-      alert ('Invalid email')
+  useEffect(() => {
+    const fetchUsers = async () => {
+      setUsers(await fetchLoginData())
     }
-    setLogin({ email: '', password: '' })
+    fetchUsers()
+  }, [])
+
+  const handleLoginSubmission = (event) => {
+    event.prevenDefault()
+    
+    if (users?.data.filter(data => data.email === login.email)) {
+      console.log('welcome')
+    }
   }
-  console.log(loginData)
+
+  console.log(users?.data.filter(data => data.email === login.email))
 
   return (
     <Wrapper onSubmit={handleLoginSubmission}>

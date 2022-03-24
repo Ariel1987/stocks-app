@@ -17,7 +17,7 @@ const SignUp = () => {
     password: '',
     passwordVerification: '',
   })
-  const { dispatch: dispatchLoginData, state: signUpData } = useLoginData()
+  const { dispatch: dispatchLoginData } = useLoginData()
 
   const handleSignUpSubmission = async (event) => {
     event.preventDefault()
