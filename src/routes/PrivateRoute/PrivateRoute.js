@@ -2,8 +2,7 @@ import { Navigate } from "react-router-dom";
 import { useLoginData } from "../../context/useLoginData";
 
 const PrivateRoute = ({ children }) => {
-  const { user } = useLoginData()
-
+  const { state: { user } } = useLoginData()
   return user ? children : <Navigate to='/login' />
 }
 

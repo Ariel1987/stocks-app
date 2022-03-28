@@ -11,13 +11,13 @@ const LoginContext = React.createContext()
 const initState = {
   error: false,
   user: null,
-  errorData: null
+  errorData: null,
 }
 
 function loginReducer(state = initState, action) {
   switch (action.type) {
     case FETCHING_DATA: {
-      return
+      return { ...state }
     }
     case FETCHING_DATA_SUCCESS: {
       return {

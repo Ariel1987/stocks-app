@@ -6,6 +6,7 @@ import FormInput from '../../../components/atoms/Input/Input'
 import LoginButton from '../../../components/atoms/Button/Button'
 import {
   FETCHING_DATA_ERROR,
+  FETCHING_DATA,
   FETCHING_DATA_SUCCESS,
   useLoginData,
 } from '../../../context/useLoginData'
@@ -19,8 +20,9 @@ const Login = () => {
     event.preventDefault()
 
     try {
+      dispatch({ type: FETCHING_DATA })
       const response = await login(loginData)
-      dispatch({ type: FETCHING_DATA_SUCCESS, payload: response })
+      dispatch({ type: FETCHING_DATA_SUCCESS, payload: response.data[0] })
 
       if (response.status === 200 && response.data.length > 0) {
         console.log('welcome')
