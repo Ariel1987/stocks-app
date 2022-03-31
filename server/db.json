@@ -2,45 +2,21 @@
   "users": [
     {
       "email": "ariel@gmail.com",
-      "password": "$2a$10$ZYrJNnaSRkEG9ZkDnreMUu9u2YzZGpkFL0HdwGlGwzIFMPjI4ITJe",
+      "password": "$2a$10$aWzoCb6pXKGdXGGDW0VId.SnFm4U5SbL9.y06UExN5FfgZ4FLacLe",
       "name": "Ariel",
       "id": 1
     },
     {
-      "email": "arielpiresdealmeida@gmail.com",
-      "password": "$2a$10$VuPajjXNozfnI9rQ0WjVOu9cx0VWaRL8IBjcKo2fWIH9roxAwFBXy",
-      "name": "ariel",
+      "email": "keren@gmail.com",
+      "password": "$2a$10$yFK1EZv8TJegpu18C4ywP.UdpuTbvMAtSBW5s78ampwD5Rfj7coHG",
+      "name": "Keren",
       "id": 2
     },
     {
-      "name": "ariel",
-      "email": "ariel@",
-      "password": "1234",
-      "id": 3
-    },
-    {
-      "email": "bruno@gmail.com",
-      "password": "$2a$10$hID35DY1OyrbE5A88wLhaeEHra1yzWF9SE/ZRd2DLKRt03V.Y1972",
-      "name": "Bruno",
-      "id": 4
-    },
-    {
-      "email": "slash@gmail.com",
-      "password": "$2a$10$kYbk8NnqEBDKHm2bOB2O1.TlKVJv72SSbHZcLq.oRjMn4.DtBliGW",
-      "name": "Bruno",
-      "id": 5
-    },
-    {
-      "email": "shalom@gmail.com",
-      "password": "$2a$10$492/bCxySyVFC639DJeKbucq5PxgJPoSOLFOOV3S5GNYW.heA3HYy",
+      "email": "david@gmail.com",
+      "password": "$2a$10$E.V0aMge2xisLLuCTjN2xeOwS4UcS9BHWy7jVTSc5GPO0nD09A6ue",
       "name": "David",
-      "id": 6
-    },
-    {
-      "email": "lessi@gmail.com",
-      "password": "$2a$10$wmpUNVJFSl3atFA3SHksTeTs5LndEn77WooZU5FZeAf3QjkeU7ORy",
-      "name": "Felipe",
-      "id": 7
+      "id": 4
     }
   ]
 }

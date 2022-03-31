@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Button from '../../../components/atoms/Button/Button'
 import FormInput from '../../atoms/Input/Input'
 import {
@@ -18,6 +18,7 @@ const SignUp = () => {
     passwordVerification: '',
   })
   const { dispatch: dispatchLoginData } = useLoginData()
+  const navigate = useNavigate()
 
   const handleSignUpSubmission = async (event) => {
     event.preventDefault()
@@ -31,8 +32,9 @@ const SignUp = () => {
           email: signUp.email,
           password: signUp.password,
         })
-
         dispatchLoginData({ type: POSTING_DATA_SUCCESS, payload: response })
+
+        navigate('/')
       } catch (error) {
         dispatchLoginData({ type: POSTING_DATA_ERROR })
       }
@@ -51,7 +53,7 @@ const SignUp = () => {
       <FormInput
         placeholder="Enter your name"
         id="name"
-        type='text'
+        type="text"
         onChange={(event) =>
           setSignUp((state) => ({ ...state, name: event.target.value }))
         }
@@ -60,7 +62,7 @@ const SignUp = () => {
       <FormInput
         placeholder="Enter your email"
         id="email"
-        type='text'
+        type="text"
         onChange={(event) =>
           setSignUp((state) => ({ ...state, email: event.target.value }))
         }
@@ -69,7 +71,7 @@ const SignUp = () => {
       <FormInput
         placeholder="Enter your password"
         id="password"
-        type='text'
+        type="text"
         onChange={(event) =>
           setSignUp((state) => ({ ...state, password: event.target.value }))
         }
@@ -78,7 +80,7 @@ const SignUp = () => {
       <FormInput
         placeholder="Verify your password"
         id="password-verification"
-        type='password'
+        type="text"
         onChange={(event) =>
           setSignUp((state) => ({
             ...state,
@@ -87,12 +89,9 @@ const SignUp = () => {
         }
         value={signUp.passwordVerification || ''}
       />
-      <Button type='submit'>SIGN UP</Button>
+      <Button type="submit">SIGN UP</Button>
       <p>
-        Already have an account?{' '}
-        <Link to="/login">
-          Login
-        </Link>
+        Already have an account? <Link to="/login">Login</Link>
       </p>
     </Wrapper>
   )
