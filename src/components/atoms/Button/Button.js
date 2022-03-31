@@ -1,7 +1,7 @@
-import { Button } from './Button.styles'
+import { Button as Btn } from './Button.styles'
 
-const LoginButton = ({ buttonName }) => {
-  return <Button type='submit' >{buttonName}</Button>
+const Button = ({ children, ...props }) => {
+  return <Btn {...props} >{children}</Btn>
 }
 
-export default LoginButton
+export default Button

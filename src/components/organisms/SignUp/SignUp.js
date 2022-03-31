@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import LoginButton from '../../atoms/Button/Button'
+import Button from '../../../components/atoms/Button/Button'
 import FormInput from '../../atoms/Input/Input'
 import {
   POSTING_DATA_ERROR,
@@ -21,7 +21,6 @@ const SignUp = () => {
 
   const handleSignUpSubmission = async (event) => {
     event.preventDefault()
-
     if (
       signUp.email.includes('@') &&
       signUp.password === signUp.passwordVerification
@@ -52,6 +51,7 @@ const SignUp = () => {
       <FormInput
         placeholder="Enter your name"
         id="name"
+        type='text'
         onChange={(event) =>
           setSignUp((state) => ({ ...state, name: event.target.value }))
         }
@@ -60,6 +60,7 @@ const SignUp = () => {
       <FormInput
         placeholder="Enter your email"
         id="email"
+        type='text'
         onChange={(event) =>
           setSignUp((state) => ({ ...state, email: event.target.value }))
         }
@@ -68,6 +69,7 @@ const SignUp = () => {
       <FormInput
         placeholder="Enter your password"
         id="password"
+        type='text'
         onChange={(event) =>
           setSignUp((state) => ({ ...state, password: event.target.value }))
         }
@@ -75,7 +77,8 @@ const SignUp = () => {
       />
       <FormInput
         placeholder="Verify your password"
-        id="password"
+        id="password-verification"
+        type='password'
         onChange={(event) =>
           setSignUp((state) => ({
             ...state,
@@ -84,7 +87,7 @@ const SignUp = () => {
         }
         value={signUp.passwordVerification || ''}
       />
-      <LoginButton buttonName="SIGN UP" />
+      <Button type='submit'>SIGN UP</Button>
       <p>
         Already have an account?{' '}
         <Link to="/login">

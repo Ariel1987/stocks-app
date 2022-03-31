@@ -1,8 +1,8 @@
-import { api } from '../config/axios'
+import { api, baseUrl } from '../config/axios'
 
 const signUpApi = async ({ name, email, password }) => {
   try {
-    return await api.post(`http://localhost:3000/users`, { name, email, password })
+    return await api.post(`${baseUrl}/register`, { name, email, password })
   } catch (error) {
     throw new Error(error)
   }

@@ -1,28 +1,46 @@
 {
   "users": [
     {
+      "email": "ariel@gmail.com",
+      "password": "$2a$10$ZYrJNnaSRkEG9ZkDnreMUu9u2YzZGpkFL0HdwGlGwzIFMPjI4ITJe",
       "name": "Ariel",
-      "email": "ariel@",
-      "password": "1234",
       "id": 1
     },
     {
-      "name": "Keren",
-      "email": "keren@",
-      "password": "1234",
+      "email": "arielpiresdealmeida@gmail.com",
+      "password": "$2a$10$VuPajjXNozfnI9rQ0WjVOu9cx0VWaRL8IBjcKo2fWIH9roxAwFBXy",
+      "name": "ariel",
       "id": 2
     },
     {
-      "name": "David",
-      "email": "david@",
+      "name": "ariel",
+      "email": "ariel@",
       "password": "1234",
       "id": 3
     },
     {
-      "name": "Flavia",
-      "email": "flavia@",
-      "password": "1234",
+      "email": "bruno@gmail.com",
+      "password": "$2a$10$hID35DY1OyrbE5A88wLhaeEHra1yzWF9SE/ZRd2DLKRt03V.Y1972",
+      "name": "Bruno",
       "id": 4
+    },
+    {
+      "email": "slash@gmail.com",
+      "password": "$2a$10$kYbk8NnqEBDKHm2bOB2O1.TlKVJv72SSbHZcLq.oRjMn4.DtBliGW",
+      "name": "Bruno",
+      "id": 5
+    },
+    {
+      "email": "shalom@gmail.com",
+      "password": "$2a$10$492/bCxySyVFC639DJeKbucq5PxgJPoSOLFOOV3S5GNYW.heA3HYy",
+      "name": "David",
+      "id": 6
+    },
+    {
+      "email": "lessi@gmail.com",
+      "password": "$2a$10$wmpUNVJFSl3atFA3SHksTeTs5LndEn77WooZU5FZeAf3QjkeU7ORy",
+      "name": "Felipe",
+      "id": 7
     }
   ]
 }

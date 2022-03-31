@@ -1,8 +1,8 @@
-import { api } from '../config/axios'
+import { api, baseUrl } from '../config/axios'
 
 const login = async ({ email, password }) => {
   try {
-    return await api.get(`http://localhost:3000/users?email=${email}&password=${password}`)
+    return await api.post(`${baseUrl}/login`, { email, password })
   } catch (error) {
     throw new Error(error)
   }

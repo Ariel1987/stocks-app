@@ -1,9 +1,9 @@
 import { Input } from './Input.styles'
 
-const FormInput = ({ id, placeholder, onChange, value }) => {
+const FormInput = ({ id, placeholder, onChange, value, type }) => {
   return (
     <Input
-      type="text"
+      type={type}
       placeholder={placeholder}
       id={id}
       onChange={onChange}

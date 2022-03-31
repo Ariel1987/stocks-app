@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Wrapper } from './Login.styles'
 import login from '../../../services/login'
 import FormInput from '../../../components/atoms/Input/Input'
-import LoginButton from '../../../components/atoms/Button/Button'
+import Button from '../../../components/atoms/Button/Button'
 import {
   FETCHING_DATA_ERROR,
   FETCHING_DATA,
@@ -18,15 +18,13 @@ const Login = () => {
 
   const handleLoginSubmission = async (event) => {
     event.preventDefault()
-
     try {
       dispatch({ type: FETCHING_DATA })
       const response = await login(loginData)
-      dispatch({ type: FETCHING_DATA_SUCCESS, payload: response.data[0] })
+      
+      if (response.status === 200 && !!response.data.user) {
+        dispatch({ type: FETCHING_DATA_SUCCESS, payload: response.data.user })
 
-      if (response.status === 200 && response.data.length > 0) {
-        console.log('welcome')
-        console.log(response)
         navigate('/')
       }
     } catch (error) {
@@ -40,6 +38,7 @@ const Login = () => {
       <FormInput
         placeholder="Enter your email"
         id="email"
+        type='text'
         onChange={(event) =>
           setLogin((state) => ({ ...state, email: event.target.value }))
         }
@@ -48,12 +47,13 @@ const Login = () => {
       <FormInput
         placeholder="Enter your password"
         id="password"
+        type='text'
         onChange={(event) =>
           setLogin((state) => ({ ...state, password: event.target.value }))
         }
         value={loginData.password || ''}
       />
-      <LoginButton buttonName="LOGIN" />
+      <Button type='submit'>LOGIN</Button>
       <p>
         Don't have an account? <Link to="/signup">Sign Up</Link>
       </p>

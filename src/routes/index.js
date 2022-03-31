@@ -21,13 +21,3 @@ const Routes = () => {
 }
 
 export default Routes
-
-/*<Route path="/" element={<Public />} />
-        <Route
-          path="/private"
-          element={
-            <PrivateRoute>
-              <Private />
-            </PrivateRoute>
-          }
-        />*/
