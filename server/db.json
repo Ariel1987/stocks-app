@@ -5,6 +5,12 @@
       "password": "$2a$10$5xW9tyLQTC14eN5yi8Sb/esbjgPnEczBHTgxQ31HU7TdW3q75.zlq",
       "name": "Ariel",
       "id": 1
+    },
+    {
+      "email": "flavia@gmail.com",
+      "password": "$2a$10$oT8Dm4yw83eH.HW6bm5FFu1TXviu2G8GRWdkkymk/bCxFCIhXLoC2",
+      "name": "Flavia",
+      "id": 2
     }
   ]
 }

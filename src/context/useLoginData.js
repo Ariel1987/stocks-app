@@ -68,7 +68,7 @@ function useLoginData() {
   const context = React.useContext(LoginContext)
 
   if (context === undefined) {
-    throw new Error('useLoginData must be used within a GithubDataProvider')
+    throw new Error('useLoginData must be used within a loginDataProvider')
   }
   return context
 }
