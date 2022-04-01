@@ -1,4 +1,5 @@
 import { Routes as Switch, Route } from 'react-router-dom'
+import HomePage from '../pages/HomePage/HomePage'
 import LoginPage from '../pages/LoginPage/LoginPage'
 import SignUpPage from '../pages/SignUpPage/SignUpPage'
 import PrivateRoute from './PrivateRoute/PrivateRoute'
@@ -10,7 +11,7 @@ const Routes = () => {
         exact path="/"
         element={
           <PrivateRoute>
-            <div>Home</div>
+            <HomePage />
           </PrivateRoute>
         }
       />

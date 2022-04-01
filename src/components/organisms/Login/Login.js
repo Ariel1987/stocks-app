@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { Wrapper } from './Login.styles'
 import login from '../../../services/login'
-import FormInput from '../../../components/atoms/Input/Input'
+import Input from '../../../components/atoms/Input/Input'
 import Button from '../../../components/atoms/Button/Button'
 import {
   FETCHING_DATA_ERROR,
@@ -35,7 +35,7 @@ const Login = () => {
   return (
     <Wrapper onSubmit={handleLoginSubmission}>
       <h1>Stocks App</h1>
-      <FormInput
+      <Input
         placeholder="Enter your email"
         id="email"
         type='text'
@@ -44,7 +44,7 @@ const Login = () => {
         }
         value={loginData.email || ''}
       />
-      <FormInput
+      <Input
         placeholder="Enter your password"
         id="password"
         type='text'

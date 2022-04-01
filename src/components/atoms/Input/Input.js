@@ -1,8 +1,8 @@
-import { Input } from './Input.styles'
+import { Input as Inp } from './Input.styles'
 
-const FormInput = ({ id, placeholder, onChange, value, type }) => {
+const Input = ({ id, placeholder, onChange, value, type }) => {
   return (
-    <Input
+    <Inp
       type={type}
       placeholder={placeholder}
       id={id}
@@ -12,4 +12,4 @@ const FormInput = ({ id, placeholder, onChange, value, type }) => {
   )
 }
 
-export default FormInput
+export default Input

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Button from '../../../components/atoms/Button/Button'
 import FormInput from '../../atoms/Input/Input'
@@ -9,7 +9,6 @@ import {
 } from '../../../context/useLoginData'
 import postSignUpData from '../../../utils/postSignUpData'
 import { Wrapper } from './SignUp.styles'
-import usersApi from '../../../services/usersApi'
 
 const SignUp = () => {
   const [signUp, setSignUp] = useState({
@@ -18,23 +17,11 @@ const SignUp = () => {
     password: '',
     passwordVerification: '',
   })
-  const [users, setUsers] = useState()
   const { dispatch: dispatchLoginData } = useLoginData()
   const navigate = useNavigate()
 
-  useEffect(() => {
-    async function fetchUsers() {
-      const response = await usersApi()
-      setUsers(response)
-    }
-    fetchUsers()
-  }, [])
-
-  console.log(users?.data.map((users) => users.email))
-
   const handleSignUpSubmission = async (event) => {
     event.preventDefault()
-
     try {
       const response = await postSignUpData({
         name: signUp.name,
@@ -42,7 +29,6 @@ const SignUp = () => {
         password: signUp.password,
       })
       dispatchLoginData({ type: POSTING_DATA_SUCCESS, payload: response })
-
       navigate('/')
     } catch (error) {
       dispatchLoginData({ type: POSTING_DATA_ERROR })

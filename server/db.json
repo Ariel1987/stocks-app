@@ -2,33 +2,9 @@
   "users": [
     {
       "email": "ariel@gmail.com",
-      "password": "$2a$10$aWzoCb6pXKGdXGGDW0VId.SnFm4U5SbL9.y06UExN5FfgZ4FLacLe",
+      "password": "$2a$10$5xW9tyLQTC14eN5yi8Sb/esbjgPnEczBHTgxQ31HU7TdW3q75.zlq",
       "name": "Ariel",
       "id": 1
-    },
-    {
-      "email": "keren@gmail.com",
-      "password": "$2a$10$yFK1EZv8TJegpu18C4ywP.UdpuTbvMAtSBW5s78ampwD5Rfj7coHG",
-      "name": "Keren",
-      "id": 2
-    },
-    {
-      "email": "david@gmail.com",
-      "password": "$2a$10$E.V0aMge2xisLLuCTjN2xeOwS4UcS9BHWy7jVTSc5GPO0nD09A6ue",
-      "name": "David",
-      "id": 4
-    },
-    {
-      "email": "bruno@gmail.com",
-      "password": "$2a$10$OQ5vaNQG/BgrHgoLhJLjQu47VE9uDzgj1peTQlFWIg4ny9u7BXRue",
-      "name": "Bruno",
-      "id": 5
-    },
-    {
-      "email": "fernando@gmail.com",
-      "password": "$2a$10$rYnlA4NnntlC7PnN1IjU7.fk.EDQvTBOWTOlXxgRtHG1sXRjj/oku",
-      "name": "Fernando",
-      "id": 6
     }
   ]
 }
