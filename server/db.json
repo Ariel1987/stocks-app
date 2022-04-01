@@ -17,6 +17,18 @@
       "password": "$2a$10$E.V0aMge2xisLLuCTjN2xeOwS4UcS9BHWy7jVTSc5GPO0nD09A6ue",
       "name": "David",
       "id": 4
+    },
+    {
+      "email": "bruno@gmail.com",
+      "password": "$2a$10$OQ5vaNQG/BgrHgoLhJLjQu47VE9uDzgj1peTQlFWIg4ny9u7BXRue",
+      "name": "Bruno",
+      "id": 5
+    },
+    {
+      "email": "fernando@gmail.com",
+      "password": "$2a$10$rYnlA4NnntlC7PnN1IjU7.fk.EDQvTBOWTOlXxgRtHG1sXRjj/oku",
+      "name": "Fernando",
+      "id": 6
     }
   ]
 }
