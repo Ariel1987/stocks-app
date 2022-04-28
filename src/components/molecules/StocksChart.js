@@ -1,17 +1,23 @@
 import { Line } from 'react-chartjs-2';
 import { Chart, registerables } from 'chart.js';
+import { useStocksData } from '../../context/useStocksData';
 Chart.register(...registerables);
 
 const StocksChart = () => {
+  const { state } = useStocksData()
+
+  const date = Object.entries(state.data?.stocksResult.data['Time Series (Daily)']).slice(0, 5).map(data => data[0]) 
+  const open = Object.entries(state.data?.stocksResult.data['Time Series (Daily)']).slice(0, 5).map(data => data[1]['1. open'])
+
   return (
     <>
       <Line
         data={{
-          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          labels: [`${date[0]}`, `${date[1]}`, `${date[2]}`, `${date[3]}`, `${date[4]}`],
           datasets: [
             {
-              label: 'Week float',
-              data: [12, 19, 3, 5, 2, 3],
+              label: 'Last five days',
+              data: [`${open[0]}`, `${open[1]}`, `${open[2]}`, `${open[3]}`, `${open[4]}`],
               backgroundColor: '#8bf1d4',
               borderColor: '#8bf1d4',
               borderWidth: 1,

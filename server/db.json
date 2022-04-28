@@ -23,6 +23,30 @@
       "password": "$2a$10$irzd1wgpy2fIVbTBnDNxZuiCTeDbcJF6.C1Ftr1B48Lcwwks.riEK",
       "name": "Keren",
       "id": 4
+    },
+    {
+      "email": "david@gmail.com",
+      "password": "$2a$10$/Tp7JyGuHdTmvH7bvRCfd.vmWqPZhjs6Ufo8CPxxsQBsieAIWpObe",
+      "name": "David",
+      "id": 5
+    },
+    {
+      "email": "rafael@gmail.com",
+      "password": "$2a$10$mpUu1NR.V.ZcXxMPgJVhLeHCOQI5bvsgK4hQKf05er2RrYzo3/6na",
+      "name": "Rafael",
+      "id": 6
+    },
+    {
+      "email": "daniel@gmail.com",
+      "password": "$2a$10$bkFuhpMGvPefkrF7ahBoruaEQax0FdUQofr03SaIuu2yNqOeZr6cG",
+      "name": "Daniel",
+      "id": 7
+    },
+    {
+      "email": "fernanda@gmail.com",
+      "password": "$2a$10$InkLCC9hxrifzLvHErnDE.UCkklDkq086O8sof4f5jtUm4tPhRjB2",
+      "name": "Fernanda",
+      "id": 8
     }
   ]
 }

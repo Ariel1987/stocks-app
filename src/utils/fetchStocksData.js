@@ -13,7 +13,7 @@ const fetchStocksData = async (companyName) => {
     payload.companyName = companySearchResult?.data.bestMatches[0]['2. name']
 
     const stocksResult = await stocksApi(payload.symbol)
-    console.log(stocksResult)
+
     return { stocksResult, payload }
   } catch (error) {
     throw new Error(error)

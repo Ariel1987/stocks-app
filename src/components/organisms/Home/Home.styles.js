@@ -3,15 +3,19 @@ import styled, { css } from 'styled-components'
 export const Wrapper = styled.form`
   ${({ theme }) => css`
     width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 
     div {
-      display: flex;
       margin-bottom: 16px;
+      margin-top: 16px;
     }
 
     h1 {
       color: white;
       padding-top: 16px;
+      text-align: center;
     }
 
     h2 {
@@ -21,14 +25,14 @@ export const Wrapper = styled.form`
     }
     
     input {
-      margin-bottom: 0;
+      margin-bottom: 8px;
       margin-right: 8px;
     }
 
     button {
       margin-top: 0;
       padding: 10px;
-      width: 50%;
+      width: 100%;
     }
   `}
 `

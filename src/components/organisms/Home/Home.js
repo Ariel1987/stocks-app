@@ -11,11 +11,17 @@ import { Wrapper } from './Home.styles'
 import fetchStocksData from '../../../utils/fetchStocksData'
 import formatDate from '../../../utils/fotmatDate'
 import StocksChart from '../../molecules/StocksChart'
+import { useLoginData } from '../../../context/useLoginData'
 
 const Home = () => {
   const [stocks, setStocks] = useState()
   const { dispatch, state } = useStocksData()
+  const { state: loginState } = useLoginData()
+
   const date = formatDate()
+  const stocksData =
+    state.data &&
+    Object.entries(state.data?.stocksResult.data['Time Series (Daily)'][date])
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -32,78 +38,52 @@ const Home = () => {
 
   return (
     <Wrapper onSubmit={handleSubmit}>
-      <div>
-      <Input
-        placeholder="Search company"
-        id="company"
-        type="text"
-        onChange={(event) => setStocks(event.target.value)}
-        value={stocks || ''}
-      />
-      <Button>Search</Button>
-      </div>
-      {state.data && (
+      {state.data ? (
         <>
           <h1>{`${state.data?.payload.companyName} (${state.data?.payload.symbol})`}</h1>
           <StocksChart />
           <h2>
             Open:{' '}
-            {(
-              Math.round(
-                state.data?.stocksResult.data['Time Series (Daily)'][date][
-                  '1. open'
-                ] * 100,
-              ) / 100
-            )
+            {(Math.round(stocksData[0][1] * 100) / 100)
               .toFixed(2)
               .replace(/\B(?=(?:\d{3})+\b)/g, ',')}
           </h2>
           <h2>
             High:{' '}
-            {(
-              Math.round(
-                state.data?.stocksResult.data['Time Series (Daily)'][date][
-                  '2. high'
-                ] * 100,
-              ) / 100
-            )
+            {(Math.round(stocksData[1][1] * 100) / 100)
               .toFixed(2)
               .replace(/\B(?=(?:\d{3})+\b)/g, ',')}
           </h2>
           <h2>
             Low:{' '}
-            {(
-              Math.round(
-                state.data?.stocksResult.data['Time Series (Daily)'][date][
-                  '3. low'
-                ] * 100,
-              ) / 100
-            )
+            {(Math.round(stocksData[2][1] * 100) / 100)
               .toFixed(2)
               .replace(/\B(?=(?:\d{3})+\b)/g, ',')}
           </h2>
           <h2>
             Close:{' '}
-            {(
-              Math.round(
-                state.data?.stocksResult.data['Time Series (Daily)'][date][
-                  '4. close'
-                ] * 100,
-              ) / 100
-            )
+            {(Math.round(stocksData[3][1] * 100) / 100)
               .toFixed(2)
               .replace(/\B(?=(?:\d{3})+\b)/g, ',')}
           </h2>
           <h2>
             Volume:{' '}
-            {(
-              state.data?.stocksResult.data['Time Series (Daily)'][date][
-                '5. volume'
-              ] + ''
-            ).replace(/\B(?=(?:\d{3})+\b)/g, ',')}
+            {(stocksData[4][1] + '').replace(/\B(?=(?:\d{3})+\b)/g, ',')}
           </h2>
         </>
+      ) : (
+        <h1>Welcome, {loginState.user.name}</h1>
       )}
+      <div>
+        <Input
+          placeholder="Search company"
+          id="company"
+          type="text"
+          onChange={(event) => setStocks(event.target.value)}
+          value={stocks || ''}
+        />
+        <Button>Search</Button>
+      </div>
     </Wrapper>
   )
 }
