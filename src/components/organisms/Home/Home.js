@@ -10,6 +10,7 @@ import Input from '../../atoms/Input/Input'
 import { Wrapper } from './Home.styles'
 import fetchStocksData from '../../../utils/fetchStocksData'
 import formatDate from '../../../utils/fotmatDate'
+import StocksChart from '../../molecules/StocksChart'
 
 const Home = () => {
   const [stocks, setStocks] = useState()
@@ -31,6 +32,7 @@ const Home = () => {
 
   return (
     <Wrapper onSubmit={handleSubmit}>
+      <div>
       <Input
         placeholder="Search company"
         id="company"
@@ -39,9 +41,11 @@ const Home = () => {
         value={stocks || ''}
       />
       <Button>Search</Button>
+      </div>
       {state.data && (
         <>
           <h1>{`${state.data?.payload.companyName} (${state.data?.payload.symbol})`}</h1>
+          <StocksChart />
           <h2>
             Open:{' '}
             {(

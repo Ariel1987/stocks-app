@@ -4,6 +4,11 @@ export const Wrapper = styled.form`
   ${({ theme }) => css`
     width: 80%;
 
+    div {
+      display: flex;
+      margin-bottom: 16px;
+    }
+
     h1 {
       color: white;
       padding-top: 16px;
@@ -11,11 +16,13 @@ export const Wrapper = styled.form`
 
     h2 {
       color: white;
-      padding-top: 16px;
+      padding-top: 8px;
+      font-size: 12px;
     }
     
     input {
-      margin-bottom: 12px;
+      margin-bottom: 0;
+      margin-right: 8px;
     }
 
     button {
