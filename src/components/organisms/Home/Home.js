@@ -42,11 +42,62 @@ const Home = () => {
       {state.data && (
         <>
           <h1>{`${state.data?.payload.companyName} (${state.data?.payload.symbol})`}</h1>
-          <h2>Open: {(Math.round(state.data?.stocksResult.data['Time Series (Daily)'][date]['1. open'] * 100) / 100).toFixed(2)}</h2>
-          <h2>High: {(Math.round(state.data?.stocksResult.data['Time Series (Daily)'][date]['2. high'] * 100) / 100).toFixed(2)}</h2>
-          <h2>Low: {(Math.round(state.data?.stocksResult.data['Time Series (Daily)'][date]['3. low'] * 100) / 100).toFixed(2)}</h2>
-          <h2>Close: {(Math.round(state.data?.stocksResult.data['Time Series (Daily)'][date]['4. close'] * 100) / 100).toFixed(2)}</h2>
-          <h2>Volume: {(state.data?.stocksResult.data['Time Series (Daily)'][date]['5. volume'] + '').replace(/\B(?=(?:\d{3})+\b)/g,',')}</h2>
+          <h2>
+            Open:{' '}
+            {(
+              Math.round(
+                state.data?.stocksResult.data['Time Series (Daily)'][date][
+                  '1. open'
+                ] * 100,
+              ) / 100
+            )
+              .toFixed(2)
+              .replace(/\B(?=(?:\d{3})+\b)/g, ',')}
+          </h2>
+          <h2>
+            High:{' '}
+            {(
+              Math.round(
+                state.data?.stocksResult.data['Time Series (Daily)'][date][
+                  '2. high'
+                ] * 100,
+              ) / 100
+            )
+              .toFixed(2)
+              .replace(/\B(?=(?:\d{3})+\b)/g, ',')}
+          </h2>
+          <h2>
+            Low:{' '}
+            {(
+              Math.round(
+                state.data?.stocksResult.data['Time Series (Daily)'][date][
+                  '3. low'
+                ] * 100,
+              ) / 100
+            )
+              .toFixed(2)
+              .replace(/\B(?=(?:\d{3})+\b)/g, ',')}
+          </h2>
+          <h2>
+            Close:{' '}
+            {(
+              Math.round(
+                state.data?.stocksResult.data['Time Series (Daily)'][date][
+                  '4. close'
+                ] * 100,
+              ) / 100
+            )
+              .toFixed(2)
+              .replace(/\B(?=(?:\d{3})+\b)/g, ',')}
+          </h2>
+          <h2>
+            Volume:{' '}
+            {(
+              state.data?.stocksResult.data['Time Series (Daily)'][date][
+                '5. volume'
+              ] + ''
+            ).replace(/\B(?=(?:\d{3})+\b)/g, ',')}
+          </h2>
         </>
       )}
     </Wrapper>

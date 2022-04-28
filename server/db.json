@@ -17,6 +17,12 @@
       "password": "$2a$10$bkHj7qxo9nsLfxOgkKldhu5jHF87pgU0fgcxuIkKEdyY6y41GYDNO",
       "name": "Felipe",
       "id": 3
+    },
+    {
+      "email": "keren@gmail.com",
+      "password": "$2a$10$irzd1wgpy2fIVbTBnDNxZuiCTeDbcJF6.C1Ftr1B48Lcwwks.riEK",
+      "name": "Keren",
+      "id": 4
     }
   ]
 }
