@@ -22,6 +22,7 @@ const SignUp = () => {
 
   const handleSignUpSubmission = async (event) => {
     event.preventDefault()
+
     try {
       const response = await postSignUpData({
         name: signUp.name,

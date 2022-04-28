@@ -1,7 +1,12 @@
-import Home from "../../components/organisms/Home/Home"
+import Home from '../../components/organisms/Home/Home'
 
 const HomePage = () => {
-  return <Home />
+
+  return (
+    <>
+      <Home />
+    </>
+  )
 }
 
 export default HomePage

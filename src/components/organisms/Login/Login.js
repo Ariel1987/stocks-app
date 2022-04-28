@@ -18,13 +18,13 @@ const Login = () => {
 
   const handleLoginSubmission = async (event) => {
     event.preventDefault()
+
     try {
       dispatch({ type: FETCHING_DATA })
       const response = await login(loginData)
       
       if (response.status === 200 && !!response.data.user) {
         dispatch({ type: FETCHING_DATA_SUCCESS, payload: response.data.user })
-
         navigate('/')
       }
     } catch (error) {

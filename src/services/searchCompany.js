@@ -1,6 +1,6 @@
 import { api, baseUrl, API_KEY } from '../config/axios'
 
-const symbolSearch = async (search) => {
+const searchCompany = async (search) => {
   try {
     return await api.get(`${baseUrl.stocksUrl}/query?function=SYMBOL_SEARCH&keywords=${search}&apikey=${API_KEY}`)
   } catch (error) {
@@ -8,6 +8,6 @@ const symbolSearch = async (search) => {
   }
 }
 
-export default symbolSearch
+export default searchCompany
 
 
