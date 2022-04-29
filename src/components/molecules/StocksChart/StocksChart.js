@@ -1,8 +1,8 @@
-import { Line } from 'react-chartjs-2';
-import { Chart, registerables } from 'chart.js';
-import { useStocksData } from '../../../context/useStocksData';
-import { Wrapper } from './StocksChart.styles';
-Chart.register(...registerables);
+import { Line } from 'react-chartjs-2'
+import { Chart, registerables } from 'chart.js'
+import { useStocksData } from '../../../context/useStocksData'
+import { Wrapper } from './StocksChart.styles'
+Chart.register(...registerables)
 
 const StocksChart = () => {
   const { state } = useStocksData()

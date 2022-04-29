@@ -40,7 +40,7 @@ const Home = () => {
 
   return (
     <Wrapper onSubmit={handleSubmit}>
-      {state.data ? (
+      {state.data? (
         <>
           <h1>{`${state.data?.payload.companyName} (${state.data?.payload.symbol})`}</h1>
           <StocksChart />
