@@ -9,9 +9,8 @@ import Button from '../../atoms/Button/Button'
 import Input from '../../atoms/Input/Input'
 import { Wrapper } from './Home.styles'
 import fetchStocksData from '../../../utils/fetchStocksData'
-import StocksChart from '../../atoms/StocksChart/StocksChart'
 import { useLoginData } from '../../../context/useLoginData'
-import StocksOutput from '../../atoms/StocksOutput/StocksOutput'
+import Stocks from '../../molecules/Stocks/Stocks'
 
 const Home = () => {
   const [stocks, setStocks] = useState()
@@ -33,19 +32,7 @@ const Home = () => {
 
   return (
     <Wrapper onSubmit={handleSubmit}>
-      {state.data ? (
-        <>
-          <h1>{`${state.data?.payload.companyName} (${state.data?.payload.symbol})`}</h1>
-          <StocksChart />
-          <StocksOutput type='Open' index='0' />
-          <StocksOutput type='High' index='1' />
-          <StocksOutput type='Low' index='2' />
-          <StocksOutput type='Close' index='3' />
-          <StocksOutput type='Volume' index='4' />
-        </>
-      ) : (
-        <h1>Welcome, {loginState.user.name}</h1>
-      )}
+      {state.data ? <Stocks /> : <h1>Welcome, {loginState.user.name}</h1>}
       <div>
         <Input
           placeholder="Search company"
