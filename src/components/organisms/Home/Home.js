@@ -10,7 +10,7 @@ import Input from '../../atoms/Input/Input'
 import { Wrapper } from './Home.styles'
 import fetchStocksData from '../../../utils/fetchStocksData'
 import formatDate from '../../../utils/fotmatDate'
-import StocksChart from '../../molecules/StocksChart'
+import StocksChart from '../../molecules/StocksChart/StocksChart'
 import { useLoginData } from '../../../context/useLoginData'
 
 const Home = () => {
@@ -35,6 +35,8 @@ const Home = () => {
     }
     setStocks('')
   }
+
+  // console.log(Object.entries(state.data?.weeklyStocksResult.data['Weekly Time Series']))
 
   return (
     <Wrapper onSubmit={handleSubmit}>

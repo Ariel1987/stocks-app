@@ -34,5 +34,9 @@ export const Wrapper = styled.form`
       padding: 10px;
       width: 100%;
     }
+
+    @media (min-width: 800px) {
+      width: 25%;
+    }
   `}
 `

@@ -1,6 +1,7 @@
 import { Line } from 'react-chartjs-2';
 import { Chart, registerables } from 'chart.js';
-import { useStocksData } from '../../context/useStocksData';
+import { useStocksData } from '../../../context/useStocksData';
+import { Wrapper } from './StocksChart.styles';
 Chart.register(...registerables);
 
 const StocksChart = () => {
@@ -10,7 +11,7 @@ const StocksChart = () => {
   const open = Object.entries(state.data?.stocksResult.data['Time Series (Daily)']).slice(0, 5).map(data => data[1]['1. open'])
 
   return (
-    <>
+    <Wrapper>
       <Line
         data={{
           labels: [`${date[0]}`, `${date[1]}`, `${date[2]}`, `${date[3]}`, `${date[4]}`],
@@ -27,7 +28,7 @@ const StocksChart = () => {
         height={400}
         width={600}
       />
-    </>
+    </Wrapper>
   )
 }
 
