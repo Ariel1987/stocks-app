@@ -47,6 +47,12 @@
       "password": "$2a$10$InkLCC9hxrifzLvHErnDE.UCkklDkq086O8sof4f5jtUm4tPhRjB2",
       "name": "Fernanda",
       "id": 8
+    },
+    {
+      "email": "pedro@gmail.com",
+      "password": "$2a$10$6TOWXQW8YZn./6B3KQ3yzOR4IEBnbgGjbg/pQbAXAGGVzikXXArIe",
+      "name": "Pedro",
+      "id": 9
     }
   ]
 }

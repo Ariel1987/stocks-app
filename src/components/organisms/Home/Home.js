@@ -9,19 +9,14 @@ import Button from '../../atoms/Button/Button'
 import Input from '../../atoms/Input/Input'
 import { Wrapper } from './Home.styles'
 import fetchStocksData from '../../../utils/fetchStocksData'
-import formatDate from '../../../utils/fotmatDate'
-import StocksChart from '../../molecules/StocksChart/StocksChart'
+import StocksChart from '../../atoms/StocksChart/StocksChart'
 import { useLoginData } from '../../../context/useLoginData'
+import StocksOutput from '../../atoms/StocksOutput/StocksOutput'
 
 const Home = () => {
   const [stocks, setStocks] = useState()
   const { dispatch, state } = useStocksData()
   const { state: loginState } = useLoginData()
-
-  const date = formatDate()
-  const stocksData =
-    state.data &&
-    Object.entries(state.data?.stocksResult.data['Time Series (Daily)'][date])
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -36,42 +31,17 @@ const Home = () => {
     setStocks('')
   }
 
-  // console.log(Object.entries(state.data?.weeklyStocksResult.data['Weekly Time Series']))
-
   return (
     <Wrapper onSubmit={handleSubmit}>
-      {state.data? (
+      {state.data ? (
         <>
           <h1>{`${state.data?.payload.companyName} (${state.data?.payload.symbol})`}</h1>
           <StocksChart />
-          <h2>
-            Open:{' '}
-            {(Math.round(stocksData[0][1] * 100) / 100)
-              .toFixed(2)
-              .replace(/\B(?=(?:\d{3})+\b)/g, ',')}
-          </h2>
-          <h2>
-            High:{' '}
-            {(Math.round(stocksData[1][1] * 100) / 100)
-              .toFixed(2)
-              .replace(/\B(?=(?:\d{3})+\b)/g, ',')}
-          </h2>
-          <h2>
-            Low:{' '}
-            {(Math.round(stocksData[2][1] * 100) / 100)
-              .toFixed(2)
-              .replace(/\B(?=(?:\d{3})+\b)/g, ',')}
-          </h2>
-          <h2>
-            Close:{' '}
-            {(Math.round(stocksData[3][1] * 100) / 100)
-              .toFixed(2)
-              .replace(/\B(?=(?:\d{3})+\b)/g, ',')}
-          </h2>
-          <h2>
-            Volume:{' '}
-            {(stocksData[4][1] + '').replace(/\B(?=(?:\d{3})+\b)/g, ',')}
-          </h2>
+          <StocksOutput type='Open' index='0' />
+          <StocksOutput type='High' index='1' />
+          <StocksOutput type='Low' index='2' />
+          <StocksOutput type='Close' index='3' />
+          <StocksOutput type='Volume' index='4' />
         </>
       ) : (
         <h1>Welcome, {loginState.user.name}</h1>

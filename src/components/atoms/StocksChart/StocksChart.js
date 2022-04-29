@@ -7,8 +7,8 @@ Chart.register(...registerables)
 const StocksChart = () => {
   const { state } = useStocksData()
 
-  const date = Object.entries(state.data?.stocksResult.data['Time Series (Daily)']).slice(0, 5).map(data => data[0]) 
-  const open = Object.entries(state.data?.stocksResult.data['Time Series (Daily)']).slice(0, 5).map(data => data[1]['1. open'])
+  const date = Object.entries(state.data?.stocksResult.data['Time Series (Daily)']).slice(0, 5).reverse().map(data => data[0]) 
+  const open = Object.entries(state.data?.stocksResult.data['Time Series (Daily)']).slice(0, 5).reverse().map(data => data[1]['1. open'])
 
   return (
     <Wrapper>
@@ -17,7 +17,7 @@ const StocksChart = () => {
           labels: [`${date[0]}`, `${date[1]}`, `${date[2]}`, `${date[3]}`, `${date[4]}`],
           datasets: [
             {
-              label: 'Last five days',
+              label: 'Last seven days',
               data: [`${open[0]}`, `${open[1]}`, `${open[2]}`, `${open[3]}`, `${open[4]}`],
               backgroundColor: '#8bf1d4',
               borderColor: '#8bf1d4',
