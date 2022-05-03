@@ -1,4 +1,4 @@
-import signUpApi from "../services/signUpApi"
+import { api, baseUrl } from "../config/axios"
 
 const postSignUpData = async ({ name, email, password }) => {
   const payload = {
@@ -8,7 +8,7 @@ const postSignUpData = async ({ name, email, password }) => {
   }
 
   try {
-    const loginDataResult = await signUpApi({ name, email, password })
+    const loginDataResult = await api.post(`${baseUrl.serverUrl}/register`, { name, email, password })
     payload.name = loginDataResult.data.name
     payload.email = loginDataResult.data.email
     payload.password = loginDataResult.data.password

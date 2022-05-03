@@ -1,11 +1,11 @@
 import CompanyInfo from '../../atoms/CompanyInfo/CompanyInfo'
-import StocksChart from '../../atoms/StocksChart/StocksChart'
-import StocksOutput from '../../atoms/StocksOutput/StocksOutput'
+import StocksChart from '../components/StocksChart/StocksChart'
+import StocksOutput from '../../molecules/components/StocksOutput/StocksOutput'
 
 const Stocks = () => {
   return (
     <>
-      <CompanyInfo /> 
+      <CompanyInfo />
       <StocksChart />
       <StocksOutput type="Open" index="0" />
       <StocksOutput type="High" index="1" />

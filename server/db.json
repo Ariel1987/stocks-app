@@ -53,6 +53,18 @@
       "password": "$2a$10$6TOWXQW8YZn./6B3KQ3yzOR4IEBnbgGjbg/pQbAXAGGVzikXXArIe",
       "name": "Pedro",
       "id": 9
+    },
+    {
+      "email": "bdmrusso@gmail.com",
+      "password": "$2a$10$HOAJhMJMe5jxNkrAMncgG.Tkaz9mH7X2ZLnX5OSad5Wd2fCYvUN8W",
+      "name": "Bruno Russo",
+      "id": 10
+    },
+    {
+      "email": "gabriel@gmail.com",
+      "password": "$2a$10$fpgNOJoMOblpFnq1Cx2ZDenHjqCKo9ZEqI.4Vlh8Q0N0FAb36iyKu",
+      "name": "Gabriel",
+      "id": 11
     }
   ]
 }
